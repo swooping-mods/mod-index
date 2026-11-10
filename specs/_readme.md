@@ -1,4 +1,4 @@
-# Moon Sweepers Mod Index specs
+# Mod Index specs
 
 | Spec | Owning source | Read when |
 |---|---|---|

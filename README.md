@@ -1,6 +1,6 @@
-# Moon Sweepers Mod Index
+# Mod Index
 
-Static catalog metadata for Moon Sweepers mods. Target repository: `swooping-mods/moon-sweepers-mod-index`; prepared locally with no remote or publication.
+Static catalog metadata for Moon Sweepers mods in the Swooping Mods organization. Repository: [swooping-mods/mod-index](https://github.com/swooping-mods/mod-index). The local checkout is named `mod-index`.
 
 Nexus Mods is the intended main player portal. This repository owns mod identities, dependency links and published release references. It does not own mod source, mod build pipelines or downloadable payloads. Code and gameplay issues belong in the API, loader or individual mod repository; catalog corrections belong here.
 

@@ -1,5 +1,7 @@
 # Catalog format and published output
 
+The owning repository is `swooping-mods/mod-index`, with the local checkout named `mod-index`. This rename does not change the Moon Sweepers catalog schemas or publication rules.
+
 `catalog/<id>.json` uses `moon-mod-index-entry/v1`. The filename must match its lowercase hyphenated ID (at most 64 characters). Required metadata includes `name`, `summary`, `kind` (`native` or `companion`), `version` (nullable in development), `requires`, `conflicts`, `supported_builds`, `status`, `source`, `nexus` and `release`.
 
 The initial 52 entries preserve project-owned names/summaries, kind, explicit development versions and dependency/conflict IDs from the development catalog. Native entries retain the development target `steam-windows-il2cpp-1.0.5`; this label is not fresh game qualification or a substitute for package executable hashes. Absent development versions stay null.
