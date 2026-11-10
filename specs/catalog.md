@@ -6,6 +6,11 @@ README.md is the only listing source. Categories group mods by player use, with 
 
 Listings are limited to the maintainer's own mods and external mods explicitly approved by the maintainer with confirmed author permission. A publicly accessible repository is insufficient on its own. MarsSweepers is the current external listing; the maintainer confirmed permission from its author. Add maintainer-owned mods when public repository links are available. Private permission correspondence stays outside the public repository.
 
+The maintainer-owned API and desktop loader are listed under Modding tools.
+Individual gameplay/framework repos prepared locally in nexus-modding are not
+listed until their real public repository URLs exist; planned destinations must
+not be presented as available downloads.
+
 `CONTRIBUTING.md` and the issue/PR templates explain listing additions and corrections. The index contains no mod source, payloads, generated catalog, dependency graph or release pipeline. The former 52 development-only records had no public repository links; they are retained in Git history rather than presented as downloadable mods.
 
 `python3 tools/check.py` checks that listings are categorized, include a mod name, repository URL and description, use HTTPS repository links without credentials or query strings, and do not duplicate URLs. It also checks local Markdown links. The single CI workflow runs that same standard-library script without installing dependencies. It does not download mods, probe remote URLs or publish artifacts.
