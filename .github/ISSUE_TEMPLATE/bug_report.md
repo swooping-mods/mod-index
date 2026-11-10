@@ -1,8 +1,8 @@
 ---
-name: Bug report
-about: Report a reproducible problem in this repository
+name: Listing correction
+about: Report a broken link, incorrect description or missing author credit
 ---
 
-Describe the problem, expected behavior and reproduction steps.
-Include the loader/API/mod versions, game build, platform and relevant error text.
-Remove personal paths, saves and credentials from logs before sharing.
+Link to the listing and describe the correction. Include the author's repository URL when available.
+
+For installation or gameplay problems, open an issue in the mod author's repository.

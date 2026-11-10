@@ -1,48 +1,53 @@
 #!/usr/bin/env python3
-"""Run focused offline checks and retain the current verification receipt."""
-import argparse
-import json
-import os
+"""Check the README directory without dependencies or network access."""
 from pathlib import Path
-import sys
-import unittest
+import re
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+LISTING = re.compile(r"- \[([^\]]+)\]\(([^)]+)\) — (.+)")
 
-def flatten(suite):
-    for test in suite:
-        if isinstance(test, unittest.TestSuite):
-            yield from flatten(test)
-        else:
-            yield test
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--host-only", action="store_true", help="Skip Qt integration checks explicitly")
-    args = parser.parse_args()
-    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-    sys.path.insert(0, str(ROOT / "tools"))
-    if (ROOT / "tools/check_snapshot.py").exists():
-        from check_snapshot import check
-        check()
-    suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"))
-    excluded = []
-    included = []
-    for test in flatten(suite):
-        if args.host_only and test._testMethodName in ("test_gui_checkboxes_views_filter_and_no_launch", "test_grid_wheel_travel_ignores_global_lines_and_preserves_precise_input"):
-            excluded.append(test.id())
-        else:
-            included.append(test)
-    result = unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite(included))
-    receipt = {"success": result.wasSuccessful(), "tests_run": result.testsRun,
-               "failures": len(result.failures), "errors": len(result.errors),
-               "skipped": [(t.id(), why) for t, why in result.skipped],
-               "excluded": excluded, "game_started": False,
-               "limits": ["No game, Wine, native Windows or co-op execution", "No Nexus/GitHub publication"]}
-    out = ROOT / "artifacts"
-    out.mkdir(exist_ok=True)
-    (out / "checks.json").write_text(json.dumps(receipt, indent=2) + "\n")
-    return 0 if result.wasSuccessful() else 1
+    readme = (ROOT / "README.md").read_text("utf-8")
+    category = None
+    listings = {}
+    categories = set()
+    for line in readme.splitlines():
+        if line.startswith("## "):
+            category = line[3:].strip()
+        if not line.startswith("- ["):
+            continue
+        row = LISTING.fullmatch(line)
+        if not category or not row:
+            raise ValueError("Listing needs a category, linked name and description: " + line)
+        name, url, description = row.groups()
+        if not all(value.strip() for value in (name, description)):
+            raise ValueError("Incomplete listing: " + name)
+        parsed = urlsplit(url)
+        parts = [part for part in parsed.path.split("/") if part]
+        if (parsed.scheme != "https" or not parsed.hostname or "." not in parsed.hostname
+                or parsed.username or parsed.password or parsed.port or parsed.query or parsed.fragment
+                or len(parts) < 2 or any(char.isspace() for char in url)):
+            raise ValueError("Expected a public HTTPS repository URL: " + url)
+        if parsed.hostname == "github.com" and len(parts) != 2:
+            raise ValueError("Link to the repository root: " + url)
+        key = url.rstrip("/").casefold()
+        if key in listings:
+            raise ValueError("Duplicate repository: " + url)
+        listings[key] = name
+        categories.add(category)
+    if not listings:
+        raise ValueError("The README has no mod listings")
+    for document in (ROOT / "README.md", ROOT / "CONTRIBUTING.md", *sorted((ROOT / "specs").glob("*.md"))):
+        for link in re.findall(r"\]\(([^)]+)\)", document.read_text("utf-8")):
+            if not urlsplit(link).scheme and not link.startswith("#") and not (document.parent / link.split("#")[0]).is_file():
+                raise ValueError("Missing local document: " + link)
+    print(f"Index OK: {len(listings)} repository links in {len(categories)} categories; local links resolve.")
+
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        main()
+    except (OSError, ValueError) as error:
+        raise SystemExit(str(error))
