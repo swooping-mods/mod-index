@@ -1,0 +1,19 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "futuristic-car",
+  "name": "Futuristic Courier",
+  "summary": "Original-texture Futuristic Courier with lights and hover visuals.",
+  "kind": "native",
+  "version": "0.1.0",
+  "requires": [
+    "vehicle-framework"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

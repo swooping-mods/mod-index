@@ -1,0 +1,15 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "dedicated-host",
+  "name": "Dedicated Host Exploration",
+  "summary": "Inspect hosting architecture and prepare private headless client experiments.",
+  "kind": "companion",
+  "version": "0.1.0",
+  "requires": [],
+  "conflicts": [],
+  "supported_builds": [],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

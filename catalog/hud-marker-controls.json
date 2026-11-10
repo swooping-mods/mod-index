@@ -1,0 +1,17 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "hud-marker-controls",
+  "name": "Hud Marker Controls",
+  "summary": "Map controls for service HUD marker types, range and distance labels.",
+  "kind": "native",
+  "version": "0.1.0",
+  "requires": [],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

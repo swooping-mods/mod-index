@@ -1,0 +1,20 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "compass-cardinals",
+  "name": "Compass Cardinals",
+  "summary": "Buy the $100 passive compass upgrade in Modded Shop.",
+  "kind": "native",
+  "version": "0.2.0",
+  "requires": [
+    "shop-framework",
+    "hints-framework"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

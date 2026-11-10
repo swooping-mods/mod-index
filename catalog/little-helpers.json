@@ -1,0 +1,19 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "little-helpers",
+  "name": "Little Helpers",
+  "summary": "Wall terminal beside the starter whiteboard: E buys plush helpers and upgrades capacity.",
+  "kind": "native",
+  "version": "0.2.0",
+  "requires": [
+    "unit-runtime"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

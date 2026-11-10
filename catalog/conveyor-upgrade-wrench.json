@@ -1,0 +1,20 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "conveyor-upgrade-wrench",
+  "name": "Conveyor Upgrade Wrench",
+  "summary": "Buy Conveyor Engineering in Modded Shop (default $125).",
+  "kind": "native",
+  "version": "0.3.0",
+  "requires": [
+    "shop-framework",
+    "hints-framework"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

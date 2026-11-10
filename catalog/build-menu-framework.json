@@ -1,0 +1,17 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "build-menu-framework",
+  "name": "Build Menu Framework",
+  "summary": "Register modded items in the normal Build menu.",
+  "kind": "native",
+  "version": "0.1.1",
+  "requires": [],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

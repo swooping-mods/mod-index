@@ -1,0 +1,21 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "portable-map",
+  "name": "Portable Map",
+  "summary": "Buy the $200 map in Modded Shop; equip it in the native hotbar.",
+  "kind": "native",
+  "version": "0.2.0",
+  "requires": [
+    "shop-framework",
+    "equipment-framework",
+    "hints-framework"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

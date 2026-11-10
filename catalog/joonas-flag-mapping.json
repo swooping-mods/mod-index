@@ -1,0 +1,17 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "joonas-flag-mapping",
+  "name": "J.O.O.N.A.S. Flag Mapping",
+  "summary": "Nearby robot discoveries persist as amber markers on the map globe.",
+  "kind": "native",
+  "version": "0.1.0",
+  "requires": [],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}

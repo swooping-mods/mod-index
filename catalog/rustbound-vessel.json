@@ -1,0 +1,19 @@
+{
+  "schema": "moon-mod-index-entry/v1",
+  "id": "rustbound-vessel",
+  "name": "Rustbound Vessel",
+  "summary": "New fast enclosed hover vessel, powered by Vehicle Framework.",
+  "kind": "native",
+  "version": "0.3.3",
+  "requires": [
+    "vehicle-framework"
+  ],
+  "conflicts": [],
+  "supported_builds": [
+    "steam-windows-il2cpp-1.0.5"
+  ],
+  "status": "development",
+  "source": null,
+  "nexus": null,
+  "release": null
+}
