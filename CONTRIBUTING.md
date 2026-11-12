@@ -10,6 +10,13 @@ Edit the categorized list in [README.md](README.md) and open a pull request. The
 - Choose the closest category and avoid duplicate listings or mirrors.
 - Keep downloads, setup instructions, compatibility details and gameplay support in the author's repository. A Nexus release is optional.
 
+A repository can contain source changes whose build or game tests are still
+deferred alongside an older tested package. Keep the description accurate about
+that distinction and link to the owning repository's current compatibility and
+qualification limits. A listing does not certify gameplay, saves, co-op or
+support for future game versions; API requirement matching alone is not runtime
+verification. Do not add private development candidates as downloadable mods.
+
 Run `python3 tools/check.py` to check categorized entries, duplicate links and local references. No packages need to be installed. The check runs offline; confirm that a newly added repository is publicly accessible before submitting.
 
 Report broken links or listing corrections here. Report problems with a mod in that mod's repository.

@@ -14,6 +14,13 @@ experiments identified separately. The native Mars Planet experiment is separate
 from the approved external MarsSweepers project. Repository listings do not imply
 that a GitHub Release or Nexus page exists, or establish gameplay qualification.
 
+Source repositories may advance beyond a retained tested package. Listing
+review preserves that distinction and leaves exact game/profile requirements,
+framework dependencies and deferred build/runtime/save/co-op gates with the
+owning repository. A source sync or API/loader update does not establish a new
+mod release or extend compatibility. Private Workshop candidates stay unlisted
+until their actual public repositories and inclusion approval exist.
+
 `CONTRIBUTING.md` and the issue/PR templates explain listing additions and corrections. The index contains no mod source, payloads, generated catalog, dependency graph or release pipeline. The former 52 development-only records had no public repository links; they are retained in Git history rather than presented as downloadable mods.
 
 `python3 tools/check.py` checks that listings are categorized, include a mod name, repository URL and description, use HTTPS repository links without credentials or query strings, and do not duplicate URLs. It also checks local Markdown links. The single CI workflow runs that same standard-library script without installing dependencies. It does not download mods, probe remote URLs or publish artifacts.
